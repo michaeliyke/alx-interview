@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Module Implementation of Lockboxes algorithm using BFS"""
 from collections import deque
 from typing import List
