@@ -31,7 +31,7 @@ def get_size(line: str) -> int:
     try:
         size = line.rsplit(' ', 1)[1]
     except Exception:
-        size = 0
+        size = ""
     return int(size) if size.isdigit() else 0
 
 
