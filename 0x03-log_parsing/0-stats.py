@@ -28,7 +28,10 @@ def get_size(line: str) -> int:
     """Get size from line"""
     # Use rsplit below to split from right by the first space only
     # So only two elements are returned, the rest, and size
-    size = line.rsplit(' ', 1)[1]
+    tokens = line.rsplit(' ', 2)
+    if len(tokens) < 2:
+        return 0
+    size = tokens[1]
     return int(size) if size.isdigit() else 0
 
 
