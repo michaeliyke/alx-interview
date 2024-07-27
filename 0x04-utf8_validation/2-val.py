@@ -72,11 +72,11 @@ def valid4(chars: str) -> bool:
     # (224-0XE0)(-0XEF)
     while (i < n):
         ch = chars[i]
-        if (ch <= 0X7F): i += 1
+        if (ch <= 127): i += 1
         elif (192 <= ch <= 223):
             if (i+1) >= n or not (128 <= chars[i+1] <= 191): return False
             i += 3
-        elif (0XF0 <= ch <= 247):
+        elif (240 <= ch <= 247):
             if(i+3 >= n
                or not (128 <= chars[i+1] <= 191)
                or not (128 <= chars[i+2] <= 191)
