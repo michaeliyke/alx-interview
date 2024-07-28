@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """Module for testing UTF-8 validation"""
+from typing import List
+
+
 # (192-0XC0)(127-0X7F)(223-0XDF)(128-0X80)(191-0XBF)(247-0XF7)(240-0XF0)
 # (224-0XE0)(-0XEF)
 # RANGES
@@ -11,7 +14,7 @@
 # --(0001 0000 0000 0000 0000-0001 0000 1111 1111 1111 1111)--
 # --(65,536-1,114,111)
 
-def valid(chars: str) -> bool:
+def valid(chars: List[int]) -> bool:
     """UTF-8 Validator function"""
     num_bytes = 0
 
@@ -26,7 +29,7 @@ def valid(chars: str) -> bool:
         num_bytes -= 1
     return num_bytes == 0
 
-def valid2(chars: str) -> bool:
+def valid2(chars: List[int]) -> bool:
     """UTF-8 Validator function"""
     # (192-0XC0)(127-0X7F)(223-0XDF)(128-0X80)(191-0XBF)(247-0XF7)(240-0XF0)
     # (224-0XE0)(-0XEF)
@@ -42,10 +45,10 @@ def valid2(chars: str) -> bool:
             if (ch >> 6 != 0B10): return False
             num_bytes -= 1
 
-        return num_bytes == 0
+    return num_bytes == 0
 
 
-def valid3(chars: str) -> bool:
+def valid3(chars: List[int]) -> bool:
     """UTF-8 Validator function"""
     num_bytes = 0
 
@@ -64,7 +67,7 @@ def valid3(chars: str) -> bool:
         return num_bytes == 0
 
 
-def valid4(chars: str) -> bool:
+def valid4(chars: List[int]) -> bool:
     """UTF-8 Validator function"""
     i = 0
     n = len(chars)
@@ -86,7 +89,7 @@ def valid4(chars: str) -> bool:
 
     return True
 
-def validV(chars: str) -> bool:
+def validV(chars: List[int]) -> bool:
     """UTF-8 Validator function"""
     # (192-0XC0)(127-0X7F)(223-0XDF)(128-0X80)(191-0XBF)(247-0XF7)(240-0XF0)
     # (224-0XE0)(-0XEF)
