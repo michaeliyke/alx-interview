@@ -43,6 +43,7 @@ def is_safe(board, row, col):
 
 
 def solve_nqueens(n):
+    """Solve the N queens problem."""
     if n < 4:
         print("N must be at least 4")
         sys.exit(1)
@@ -54,6 +55,7 @@ def solve_nqueens(n):
 
 
 def solve_nqueens_util(board, row, solutions):
+    """Solve the N queens problem using backtracking."""
     if row == len(board):
         solution = []
         for i in range(len(board)):
