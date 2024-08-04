@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# This script is used to run the project's tests.
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <test_file>"
+	exit 1
+fi
+
+./0-nqueens.py "$1"
+
+echo $?
