@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // learning about the requests in node
 
 const https = require('https');
