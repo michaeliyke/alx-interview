@@ -20,10 +20,9 @@ request(url, (error, response, body) => {
       .then((names) => names.forEach((name) => console.log(name)))
       .catch((error) => console.error('Error:', error));
   }
-
 });
 
-function processCharacter(characterUrl) {
+function processCharacter (characterUrl) {
   return new Promise((resolve, reject) => {
     request(characterUrl, (error, response, body) => {
       if (error) {
