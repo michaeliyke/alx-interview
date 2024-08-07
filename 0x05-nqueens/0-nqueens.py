@@ -3,6 +3,8 @@
 
 Challenge: Place N queens on an NxN chessboard so that no two queens
 attack each other.
+Two queens can attack each other if they are on the same row, column,
+or diagonal.
 
 The solution is a recursive backtracking algorithm that places queens
 on the board one by one.
