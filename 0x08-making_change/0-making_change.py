@@ -34,7 +34,8 @@ def makeChange(coins, total):
     if total <= 0:
         return 0
 
-    # Queue to perform BFS, starting from the total value of 0 with 0 coins used
+    # Queue to perform BFS,
+    # starting from the total value of 0 with 0 coins used
     queue = deque([(0, 0)])
     visited = set([0])
 
